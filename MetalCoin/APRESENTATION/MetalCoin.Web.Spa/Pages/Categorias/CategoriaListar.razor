@@ -1,0 +1,52 @@
+﻿@page "/categorias"
+@using MetalCoin.Web.Spa.Core.Endpoint;
+@using MetalCoin.Web.Spa.Core.Models;
+
+<h3>Lista de Categorias</h3>
+<div class="row mb-4">
+	<div class="col-12 text-end">
+		<a href="categorias/0" class="btn btn-primary">Cadastrar</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-12">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>Status</th>
+					<th>Criado</th>
+					<th>Alterado</th>
+					<th>Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in _categoriasLista)
+				{
+					<tr>
+						<th>@item.Id</th>
+						<td>@item.Nome</td>
+						<td>@item.Status</td>
+						<td>@item.Criado</td>
+						<td>@item.Alterado</td>
+						<td>
+							<a href="Excluir" class="btn btn-danger m-xl-2" style="padding: 5px 10px; font-size: 14px;"><i class="ri-delete-bin-5-fill"></i></a>
+							<a href="categorias/@item.Id" class="btn btn-primary m-xl-2" style="padding: 5px 10px; font-size: 14px;"><i class="ri-edit-2-fill"></i></a>
+						</td>					
+					</tr>				
+				}
+			</tbody>			
+		</table>
+	</div>
+</div>
+@code {
+	[Inject] ICategoriaEndpoint CategoriasEndpoints { get; set; }
+	private List<CategoriaResponse> _categoriasLista = new();
+
+	protected override async Task OnInitializedAsync()
+	{
+		_categoriasLista = await CategoriasEndpoints.ObterTodos();		
+	}
+}

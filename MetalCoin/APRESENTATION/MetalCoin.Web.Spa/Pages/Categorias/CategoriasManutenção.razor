@@ -1,0 +1,66 @@
+﻿@page "/categorias/{Id}"
+@using MetalCoin.Web.Spa.Core.Endpoint;
+@using MetalCoin.Web.Spa.Core.Models;
+
+<h3>Categorias Manutenção</h3>
+
+@if (@Id == "cadastrar")
+{
+    <h3>
+        Alterar
+    </h3>
+}
+else
+{
+    <h3>Cadastar</h3>
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>
+            <EditForm Model="_categoriaRequest">
+                <div class="row">
+                    <div class="col-4">
+                        <label>Nome da categoria</label>
+                        <InputText @bind-Value="_categoriaRequest.Nome"></InputText>
+                    </div>
+                    <div class="col-4">
+                        <label>Status da categoria</label>
+                        <InputCheckbox @bind-Value="_categoriaRequest.Status"></InputCheckbox>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <button type="reset" class="btn btn-outline-dark">Cancelar</button>
+                    </div>
+                </div>
+            </EditForm>
+        </h5>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Id { get; set; }
+    [Inject] ICategoriaEndpoint CategoriasEndpoints { get; set; }
+
+    private CategoriaRequest _categoriaRequest = new();
+    private CategoriaResponse _categoriaResponse = new();
+
+    protected override Task OnInitializedAsync()
+    {
+        if (Id != "cadastrar")
+        {
+            BuscarCategoria();
+        }
+        return base.OnInitializedAsync();
+    }
+    //protected override EnviarFormulario()
+    //{
+        
+    //}
+    protected void BuscarCategoria()
+    {
+        var categoriaEncontrada = CategoriasEndpoints.ObterUm(Id);
+    }
+}
