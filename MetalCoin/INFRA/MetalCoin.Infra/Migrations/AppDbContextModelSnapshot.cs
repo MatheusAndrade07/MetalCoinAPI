@@ -120,9 +120,6 @@ namespace MetalCoin.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime>("DataAlteracao")
                         .HasColumnType("datetime");
 

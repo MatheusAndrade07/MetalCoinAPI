@@ -9,7 +9,6 @@ namespace Metalcoin.Core.Domain
         public DateTime DataCadastro { get; set; }
         public DateTime DataAlteracao { get; set; }
         public string Descricao { get; set; }
-        public decimal Valor { get; set; }
-        public bool Ativo { get; set; }       
+        public decimal Valor { get; set; }              
     }
 }

@@ -52,8 +52,7 @@ namespace MetalCoin.Infra.Migrations
                     DataCadastro = table.Column<DateTime>(type: "datetime", nullable: false),
                     DataAlteracao = table.Column<DateTime>(type: "datetime", nullable: false),
                     Descricao = table.Column<string>(type: "varchar(100)", nullable: false),
-                    Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Ativo = table.Column<bool>(type: "bit", nullable: false)
+                    Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -52,6 +52,8 @@ namespace MetalCoin.Application.Services
             {
                 Nome = produto.Nome.ToUpper(),
                 Status = produto.Status,
+                Descricao = produto.Descricao,
+                Valor = produto.Valor,                
                 DataCadastro = DateTime.Now,
                 DataAlteracao = DateTime.Now
             };

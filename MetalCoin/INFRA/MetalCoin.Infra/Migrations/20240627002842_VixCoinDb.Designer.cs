@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MetalCoin.Infra.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240627001430_VixCoinDb")]
+    [Migration("20240627002842_VixCoinDb")]
     partial class VixCoinDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -121,9 +121,6 @@ namespace MetalCoin.Infra.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("bit");
 
                     b.Property<DateTime>("DataAlteracao")
                         .HasColumnType("datetime");

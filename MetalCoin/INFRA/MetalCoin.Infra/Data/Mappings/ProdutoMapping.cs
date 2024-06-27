@@ -35,11 +35,6 @@ namespace MetalCoin.Infra.Data.Mappings
             builder.Property(p => p.Valor)
                 .HasColumnType("decimal(18,2)")
                 .IsRequired();
-
-            builder.Property(p => p.Ativo)
-                .HasColumnType("bit")
-                .IsRequired();
-
         }
     }
 }
