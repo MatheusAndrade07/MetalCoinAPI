@@ -88,8 +88,7 @@ namespace MetalCoin.Application.Services
                 Nome = c.Nome,
                 Status = c.Status,
                 DataAlteracao = c.DataAlteracao,
-                DataCadastro = c.DataCadastro,
-                FotoCapa = c.CapaUrl
+                DataCadastro = c.DataCadastro,                
             });
 
             return response.ToList();

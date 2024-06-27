@@ -7,6 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20240308002339_InicioBanco.cs" />
+    <Compile Remove="Migrations\20240308002339_InicioBanco.Designer.cs" />
+    <Compile Remove="Migrations\20240308004723_initial.cs" />
+    <Compile Remove="Migrations\20240308004723_initial.Designer.cs" />
+    <Compile Remove="Migrations\20240503001402_InicioBancoCategoria.cs" />
+    <Compile Remove="Migrations\20240503001402_InicioBancoCategoria.Designer.cs" />
+    <Compile Remove="Migrations\20240613230741_AdicionaCampoCapaUrlCategoria.cs" />
+    <Compile Remove="Migrations\20240613230741_AdicionaCampoCapaUrlCategoria.Designer.cs" />
+    <Compile Remove="Migrations\20240626232555_VixCoinDb.cs" />
+    <Compile Remove="Migrations\20240626232555_VixCoinDb.Designer.cs" />
+    <Compile Remove="Migrations\AppDbContextModelSnapshot.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.27" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.27" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.27" />
@@ -18,6 +32,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\CORE\Metalcoin.Core\Metalcoin.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

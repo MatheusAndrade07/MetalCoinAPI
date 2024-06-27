@@ -18,18 +18,7 @@ namespace MetalCoin.Infra.Data.Mappings
 
             builder.Property(p => p.Documento)
                 .HasColumnType("varchar(14)")
-                .IsRequired();
-
-            //Criação do relacionamento 1 para 1
-            //Fornecedor tem um endereço
-            builder.HasOne(p => p.Endereco)
-                .WithOne(e => e.Fornecedor);
-
-            //Criação do relacionamento 1 para N
-            //Fornecedor tem muitos produtos
-            builder.HasMany(p => p.Produtos)
-                .WithOne(p => p.Fornecedor)
-                .HasForeignKey(p => p.FornecedorId);
+                .IsRequired();            
         }
     }
 }

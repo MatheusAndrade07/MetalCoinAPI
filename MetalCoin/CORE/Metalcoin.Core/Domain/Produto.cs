@@ -10,9 +10,6 @@ namespace Metalcoin.Core.Domain
         public DateTime DataAlteracao { get; set; }
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
-        public bool Ativo { get; set; }
-        /* EF Relation */
-        public Guid FornecedorId { get; set; }
-        public Fornecedor Fornecedor { get; set; }
+        public bool Ativo { get; set; }       
     }
 }

@@ -9,9 +9,6 @@ namespace Metalcoin.Core.Domain
         public string Documento { get; set; }
         public TipoFornecedor TipoFornecedor { get; set; }
         public bool Status { get; set; }
-        public Endereco Endereco { get; set; }
-
-        /* EF Relation */
-        public IEnumerable<Produto> Produtos { get; set; }
+        public Endereco Endereco { get; set; }    
     }
 }
